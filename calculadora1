@@ -1,4 +1,4 @@
-   def suma(a, b):
+ def suma(a, b): 
     return a + b
 
 def resta(a, b):
@@ -13,6 +13,12 @@ def division(a, b):
     else:
         return "Error: División por cero"
 
+def multiplicacion_al_cubo(a):
+    return a ** 3
+
+def multiplicacion_al_cuadrado(a):
+    return a ** 2
+
 def calculadora():
     print("Calculadora")
     print("----------------------------")
@@ -21,23 +27,32 @@ def calculadora():
     print("2. Resta")
     print("3. Multiplicación")
     print("4. División")
+    print("5. Multiplicación al cubo")
+    print("6. Multiplicación al cuadrado")
 
-    opcion = input("Selecciona una operación (1/2/3/4): ")
+    opcion = input("Selecciona una operación (1/2/3/4/5/6): ")
 
     try:
-        num1 = float(input("Ingresa el primer número: "))
-        num2 = float(input("Ingresa el segundo número: "))
-
-        if opcion == '1':
-            print(f"Resultado: {suma(num1, num2)}")
-        elif opcion == '2':
-            print(f"Resultado: {resta(num1, num2)}")
-        elif opcion == '3':
-            print(f"Resultado: {multiplicacion(num1, num2)}")
-        elif opcion == '4':
-            print(f"Resultado: {division(num1, num2)}")
+        if opcion == '5':
+            num = float(input("Ingresa el número a elevar al cubo: "))
+            print(f"Resultado: {multiplicacion_al_cubo(num)}")
+        elif opcion == '6':
+            num = float(input("Ingresa el número a elevar al cuadrado: "))
+            print(f"Resultado: {multiplicacion_al_cuadrado(num)}")
         else:
-            print("Opción inválida.")
+            num1 = float(input("Ingresa el primer número: "))
+            num2 = float(input("Ingresa el segundo número: "))
+
+            if opcion == '1':
+                print(f"Resultado: {suma(num1, num2)}")
+            elif opcion == '2':
+                print(f"Resultado: {resta(num1, num2)}")
+            elif opcion == '3':
+                print(f"Resultado: {multiplicacion(num1, num2)}")
+            elif opcion == '4':
+                print(f"Resultado: {division(num1, num2)}")
+            else:
+                print("Opción inválida.")
     except ValueError:
         print("Error: Por favor ingresa números válidos.")
 
